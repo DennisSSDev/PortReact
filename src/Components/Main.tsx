@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import SHeader, { SCarousel } from "./Helper";
+import SHeader, { SCarousel, STabContent, SBioCard } from "./Helper";
 import { CreatorData } from "../Content/Data";
-import { Grid, Header } from "semantic-ui-react";
+import { Grid, Segment } from "semantic-ui-react";
 // Hold the front facing data that the user will view upon opening the website
 export default class Main extends Component {
   render() {
@@ -9,13 +9,15 @@ export default class Main extends Component {
       <div>
         <SHeader />
         <div>
-          <Grid centered columns={2}>
+          <Grid centered padded columns={2}>
             <Grid.Column>
-              <Header as="h4">{CreatorData.creatorMessage}</Header>
+              <Segment raised padded inverted color="purple">
+                <p>{CreatorData.creatorMessage}</p>
+              </Segment>
             </Grid.Column>
           </Grid>
         </div>
-        <SCarousel />
+        <SCarousel Items={[{}, {}, {}]} />
       </div>
     );
   }
@@ -25,9 +27,11 @@ export default class Main extends Component {
 export class ProjectGrid extends Component {
   render() {
     return (
-      <div>
-        <p>Place holder for the grid of projects</p>
-      </div>
+      <Grid centered padded columns={1}>
+        <Grid.Row>
+          <STabContent />
+        </Grid.Row>
+      </Grid>
     );
   }
 }
@@ -35,10 +39,6 @@ export class ProjectGrid extends Component {
 // hold the data for resume and contact
 export class Extern extends Component {
   render() {
-    return (
-      <div>
-        <p>Place holder for the grid of projects</p>
-      </div>
-    );
+    return <SBioCard />;
   }
 }
