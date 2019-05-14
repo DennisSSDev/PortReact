@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Main, { ProjectGrid, Extern } from "./Components/Main";
+import { Footer } from "./Components/Helper";
 import "./App.css";
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
         <Main />
         <ProjectGrid />
         <Extern />
+        <Footer />
       </div>
     );
   }

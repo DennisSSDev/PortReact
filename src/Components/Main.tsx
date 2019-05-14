@@ -1,6 +1,12 @@
 import React, { Component } from "react";
-import SHeader, { SCarousel, STabContent, SBioCard } from "./Helper";
-import { CreatorData } from "../Content/Data";
+import SHeader, { SCarousel, STabContent, SBioCard, SocialTab } from "./Helper";
+import {
+  CreatorData,
+  CreatorCards,
+  CreatorSocialData,
+  Projects,
+  CreatorContact
+} from "../Content/Data";
 import { Grid, Segment } from "semantic-ui-react";
 // Hold the front facing data that the user will view upon opening the website
 export default class Main extends Component {
@@ -10,14 +16,19 @@ export default class Main extends Component {
         <SHeader />
         <div>
           <Grid centered padded columns={2}>
-            <Grid.Column>
-              <Segment raised padded inverted color="purple">
-                <p>{CreatorData.creatorMessage}</p>
-              </Segment>
-            </Grid.Column>
+            <Grid.Row>
+              <Grid.Column>
+                <Segment raised padded inverted color="purple">
+                  <p>{CreatorData.creatorMessage}</p>
+                </Segment>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <SocialTab socialItems={CreatorSocialData} />
+            </Grid.Row>
           </Grid>
         </div>
-        <SCarousel Items={[{}, {}, {}]} />
+        <SCarousel Items={CreatorCards} />
       </div>
     );
   }
@@ -29,7 +40,7 @@ export class ProjectGrid extends Component {
     return (
       <Grid centered padded columns={1}>
         <Grid.Row>
-          <STabContent />
+          <STabContent projects={Projects} />
         </Grid.Row>
       </Grid>
     );
@@ -39,6 +50,6 @@ export class ProjectGrid extends Component {
 // hold the data for resume and contact
 export class Extern extends Component {
   render() {
-    return <SBioCard />;
+    return <SBioCard userData={CreatorContact} />;
   }
 }
