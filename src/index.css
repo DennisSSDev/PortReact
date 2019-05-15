@@ -1,16 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Nunito Sans', sans-serif, "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #1A191B;
+.ui.menu.inverted {
+  background-color: #333333 !important;
 }
 
+.ui.header.bold {
+  color: white;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.active.item {
+  border-color: #82B4EE !important;
+}
+
+.ui.header {
+  color: #82B4EE;
+}
+
+.ui.override.black {
+  background-color: #1B1B1B;
+  border-color: #1B1B1B;
+}
+
+.ui.inverted.raised.padded.segment {
+  background-color: #424242;
+}
+
+ui.white {
+  color: white !important;
+}
+
+.ui.card {
+  background-color: #313131 !important;
+  box-shadow: 0 5px 20px -3px rgba(0, 0, 0, 0.4) !important;
 }

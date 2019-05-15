@@ -12,15 +12,17 @@ import { Grid, Segment } from "semantic-ui-react";
 export default class Main extends Component {
   render() {
     return (
-      <div>
+      <div className="ui override black">
         <SHeader />
         <div>
           <Grid centered padded columns={2}>
             <Grid.Row>
               <Grid.Column>
-                <Segment raised padded inverted color="purple">
-                  <p>{CreatorData.creatorMessage}</p>
-                </Segment>
+                <div style={{ marginTop: 75 }}>
+                  <Segment raised padded inverted>
+                    <p>{CreatorData.creatorMessage}</p>
+                  </Segment>
+                </div>
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>

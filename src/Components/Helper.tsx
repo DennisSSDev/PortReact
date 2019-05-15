@@ -133,10 +133,14 @@ class SCarousel extends Component<CarouselProps, CarouselState> {
       rows.push(
         <Grid key={index} centered columns={1} padded>
           <Grid.Row>
-            <Grid.Column width={4}>
+            <Grid.Column width={4} className="override black">
               <Card fluid>
                 <Card.Content>
-                  <Card.Header>{CreatorData[index].cardTitle}</Card.Header>
+                  <Card.Header textAlign="center">
+                    <p style={{ color: "white" }}>
+                      {CreatorData[index].cardTitle}
+                    </p>
+                  </Card.Header>
                 </Card.Content>
                 <Image src={CreatorData[index].cardImage} wrapped ui={false} />
               </Card>
